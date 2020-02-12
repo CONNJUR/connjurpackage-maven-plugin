@@ -23,7 +23,7 @@
   <groupId>edu.uchc.connjur</groupId>
   <artifactId>connjurpackage-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>connjurpackage-maven-plugin Maven Mojo</name>
   <description>Plugin used to package JavaFX 11+
   projects</description>
@@ -261,8 +261,8 @@
   </developers>
   <scm>
     <url>https://github.com/CONNJUR/connjurpackage-maven-plugin</url> 
-	<connection>scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</connection>
-    <developerConnection>scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</developerConnection>
+	<connection>scm:git:git@github.com/CONNJUR/connjurpackage-maven-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com/CONNJUR/connjurpackage-maven-plugin.git</developerConnection>
     <tag>connjurpackage-maven-plugin-1.0.0</tag>
   </scm>
   <distributionManagement>
