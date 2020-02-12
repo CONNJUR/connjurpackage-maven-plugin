@@ -17,15 +17,13 @@
  ~ NMRbox.org extension funded by the National Institutes of Health (NIH) /
  ~ National Institute of General Medical Sciences (NIGMS), grant 1P41GM111135 
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.uchc.connjur</groupId>
   <artifactId>connjurpackage-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>connjurpackage-maven-plugin Maven Mojo</name>
   <description>Plugin used to package JavaFX 11+
   projects</description>
@@ -258,7 +256,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
     <developer>
       <name>Gerard Weatherby</name>
       <email>gweatherby@uchc.edu</email>
-      <organization></organization>
+      <organization />
       <organizationUrl>https://www.gluonhq.com</organizationUrl>
     </developer>
   </developers>
@@ -267,6 +265,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
     https://github.com/CONNJUR/connjurpackage-maven-plugin</url> 
 	<connection>scm:git:git://github.com/CONNJUR/connjurpackage-maven-plugin.git</connection>
     <developerConnection>scm:git:git://github.com/CONNJUR/connjurpackage-maven-plugin.git</developerConnection>
+    <tag>connjurpackage-maven-plugin-1.0.0</tag>
   </scm>
   <distributionManagement>
     <snapshotRepository>
