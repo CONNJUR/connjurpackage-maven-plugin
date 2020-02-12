@@ -17,15 +17,13 @@
  ~ NMRbox.org extension funded by the National Institutes of Health (NIH) /
  ~ National Institute of General Medical Sciences (NIGMS), grant 1P41GM111135 
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.uchc.connjur</groupId>
   <artifactId>connjurpackage-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
   <name>connjurpackage-maven-plugin Maven Mojo</name>
   <description>Plugin used to package JavaFX 11+
   projects</description>
@@ -263,7 +261,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
     scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</connection>
     <developerConnection>
     scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</developerConnection>
-    <tag>connjurpackage-maven-plugin-1.0.2</tag>
+    <tag>connjurpackage-maven-plugin-1.0.5</tag>
   </scm>
   <distributionManagement>
     <snapshotRepository>
