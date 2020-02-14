@@ -59,6 +59,7 @@ public class ConnjurPackageMojo extends JavaFXBaseMojo {
      */
     @Parameter(property = "packageDirectory", defaultValue = "package")
     private String packageDirectory;
+
     /**
      * <p>
      * If true, the generated script will use absolute paths. By default, it uses
@@ -71,11 +72,31 @@ public class ConnjurPackageMojo extends JavaFXBaseMojo {
 
     /**
      * <p>
+     * If true, adds a statement to script to change directory to script location
+     * using linux <i>readlink</i> command
+     * </p>
+     */
+    @SuppressWarnings("unused")
+    @Parameter(property = "linuxScript", defaultValue = "false")
+    private boolean linuxScript;
+
+    /**
+     * <p>
      * Name of subdirectory jars are copied into.
      * </p>
      */
+    @SuppressWarnings("unused")
     @Parameter(property = "jarDirectory", defaultValue = "jars")
     private String jarDirectory;
+
+    /**
+     * <p>
+     * Name of launcher script
+     * </p>
+     */
+    @SuppressWarnings("unused")
+    @Parameter(property = "scriptName", defaultValue = "launch.sh")
+    private String scriptName;
 
     private Path output;
 
@@ -186,6 +207,11 @@ public class ConnjurPackageMojo extends JavaFXBaseMojo {
             preparePaths(getParent(Paths.get(executable), 2));
 
             StringBuilder script = new StringBuilder("#!/bin/bash");
+            if (linuxScript) {
+                script.append(System.lineSeparator());
+                script.append("cd $(dirname $(readlink -f $0))");
+                script.append(System.lineSeparator());
+            }
             if (options != null) {
                 options.stream()
                         .filter(Objects::nonNull)
@@ -237,7 +263,7 @@ public class ConnjurPackageMojo extends JavaFXBaseMojo {
                 script.append(commandlineArgs);
             }
 
-            final Path scriptPath = output.resolve("script.sh");
+            final Path scriptPath = output.resolve(scriptName);
             Files.write(scriptPath, script.toString().getBytes());
             final Set<PosixFilePermission> perm = Files.getPosixFilePermissions(scriptPath);
             perm.add(PosixFilePermission.OWNER_EXECUTE);

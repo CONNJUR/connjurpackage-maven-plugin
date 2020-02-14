@@ -11,6 +11,9 @@ target
 # VM Crash Files
 hs_err_pid*
 
+#VIM
+*.swp
+
 # Log file
 *.log
 /.settings

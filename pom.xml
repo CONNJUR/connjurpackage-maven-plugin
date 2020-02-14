@@ -17,13 +17,15 @@
  ~ NMRbox.org extension funded by the National Institutes of Health (NIH) /
  ~ National Institute of General Medical Sciences (NIGMS), grant 1P41GM111135 
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.nmrbox.connjur</groupId>
   <artifactId>connjurpackage-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-  <version>1.0.6-SNAPSHOT</version>
+  <version>1.0.8</version>
   <name>connjurpackage-maven-plugin Maven Mojo</name>
   <description>Plugin used to package JavaFX 11+
   projects</description>
@@ -169,6 +171,20 @@
           <source>8</source>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <profiles>
@@ -186,30 +202,6 @@
                 <goals>
                   <goal>jar-no-fork</goal>
                 </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>${gpg.plugin.version}</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-                <configuration>
-                  <!-- This is necessary for gpg to not try to use the pinentry programs -->
-                  <!-- Only required for GPG >= 2.2 -->
-                  <!--
-                  <gpgArguments>
-                    <arg>&#45;&#45;pinentry-mode</arg>
-                    <arg>loopback</arg>
-                  </gpgArguments>
-                  -->
-                </configuration>
               </execution>
             </executions>
           </plugin>
@@ -255,9 +247,12 @@
     </developer>
   </developers>
   <scm>
-    <url>https://github.com/CONNJUR/connjurpackage-maven-plugin</url>
-    <connection>scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</connection>
-    <developerConnection>scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</developerConnection>
+    <url>
+    https://github.com/CONNJUR/connjurpackage-maven-plugin</url>
+    <connection>
+    scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</connection>
+    <developerConnection>
+    scm:git:https://github.com/CONNJUR/connjurpackage-maven-plugin.git</developerConnection>
     <tag>connjurpackage-maven-plugin-1.0.2</tag>
   </scm>
   <distributionManagement>
@@ -268,7 +263,8 @@
     </snapshotRepository>
     <repository>
       <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <url>
+      https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
 </project>
